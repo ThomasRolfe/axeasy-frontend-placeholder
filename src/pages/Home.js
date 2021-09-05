@@ -1,18 +1,22 @@
 import HeroImage from "../img/axeasy-scholarship-overview.png";
+import {AxeasyLogo} from "../svg/AxeasyLogo";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 export default function Home() {
     return (
         <>
-        <nav className="flex justify-between mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-8xl ">
-            <div>
-                Logo
+        <nav className="flex items-center justify-between mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-8xl min-h-10 py-6">
+            <div>                
+                <AxeasyLogo  className="h-10 md:h-14 " />
             </div>
             <div>
-                Twitter
+                <a href="https://twitter.com/home" rel="noreferrer" target="_blank" className="" title="Get in touch with us on Twitter">
+                <FontAwesomeIcon size="2x" className="text-twitter-blue" icon={faTwitter} />
+                </a>
             </div>
-
         </nav>
-        <div className="bg-white pb-8 sm:pb-12 lg:pb-12">
+        <div className="bg-white pb-8 sm:pb-12 lg:pb-12 -mt-10 md:-mt-14">
             <div className="pt-8 overflow-hidden sm:pt-12 lg:relative lg:py-48">
                 <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-8xl lg:grid lg:grid-cols-2 lg:gap-18">
                     <div>
@@ -71,6 +75,9 @@ export default function Home() {
                 </div>
             </div>
         </div>
+        <footer className="h-10 text-center p-16 text-white bg-brand-black-light">
+            Copyright {(new Date()).getFullYear()} Axeasy.io
+        </footer>
         </>
     );
 }
