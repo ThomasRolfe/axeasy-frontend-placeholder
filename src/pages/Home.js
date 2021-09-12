@@ -2,28 +2,9 @@ import HeroImage from "../img/axeasy-scholarship-overview.png";
 import {AxeasyLogo} from "../svg/AxeasyLogo";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
-import axios from "axios";
-import { useState } from "react";
+import NotificationForm from "./components/NotificationForm";
 
-const formId = 2574758;
-
-
-export default function Home() {
-    const [email, setEmail] = useState('');
-
-    const submitSignupForm = (e) => {
-        e.preventDefault();
-        axios.post(`https://api.convertkit.com/v3/forms/${formId}/subscribe`, {
-            api_key: process.env.REACT_APP_CONVERTKIT_API_KEY,
-            email: email
-        })
-        .then(response => {
-            console.log(response)
-        })
-        .catch((e) => {
-            console.log(e)
-        })
-    }
+export default function Home() {  
 
     return (
         <>
@@ -32,7 +13,7 @@ export default function Home() {
                 <AxeasyLogo  className="h-10 md:h-14 " />
             </div>
             <div className="z-20">
-                <a href="https://twitter.com/home" rel="noreferrer" target="_blank" className="" title="Get in touch with us on Twitter">
+                <a href="https://twitter.com/Axeasyio" rel="noreferrer" target="_blank" className="" title="Get in touch with us on Twitter">
                     <FontAwesomeIcon className="text-twitter-blue  text-4xl hover:scale-125 transform transition" icon={faTwitter} />
                 </a>
             </div>
@@ -52,37 +33,7 @@ export default function Home() {
                                     discounts for all future premium features.
                                 </p>
                             </div>
-                            <form
-                                action="#"
-                                className="mt-12 sm:max-w-lg sm:w-full sm:flex"
-                                onSubmit={submitSignupForm}
-                            >
-                                <div className="min-w-0 flex-1">
-                                    <label
-                                        htmlFor="hero-email"
-                                        className="sr-only font-muli"
-                                    >
-                                        Email address
-                                    </label>
-                                    <input
-                                        id="hero-email"
-                                        type="email"
-                                        className="block w-full bg-gray-100 border border-transparent rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 focus:border-brand-light-turq focus:ring-brand-light-turq font-muli"
-                                        placeholder="Enter your email"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        required
-                                    />
-                                </div>
-                                <div className="mt-4 sm:mt-0 sm:ml-3">
-                                    <button
-                                        type="submit"
-                                        className="block w-full rounded-md border border-transparent px-5 py-3 bg-brand-light-turq text-base font-medium text-white hover:bg-brand-dark-turq focus:outline-none focus:ring-2 focus:ring-brand-light-turq focus:ring-offset-2 sm:px-10"
-                                    >
-                                        Sign up
-                                    </button>
-                                </div>
-                            </form>
+                            <NotificationForm />
                         </div>
                     </div>
                 </div>
