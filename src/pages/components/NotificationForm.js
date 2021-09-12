@@ -11,12 +11,14 @@ const NotificationForm = () => {
     const { mutate, isLoading, isError, isSuccess, isIdle } =
         useMutation(submitEmail);
 
-    console.log(isLoading, isError, isSuccess, isIdle);
+    const SubmitNotificationForm = (event) => {
 
-    const SubmitNotificationForm = () => {
+        event.preventDefault();
+
         if (!isIdle) {
             return;
         }
+        
         mutate({
             formId: formId,
             email: email,
