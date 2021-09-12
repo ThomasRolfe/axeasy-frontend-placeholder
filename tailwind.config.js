@@ -18,9 +18,9 @@ module.exports = {
         },
 
         fontFamily: {
-            "filson-soft": ["Filson soft"],
-            "filson-pro": ["Filson pro"],
-            muli: ["Muli"],
+            "filson-soft": ["Filson soft", "sans-serif"],
+            "filson-pro": ["Filson pro", "sans-serif"],
+            muli: ["Muli", "sans-serif"],
         },
     },
     variants: {
